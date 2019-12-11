@@ -10,7 +10,7 @@ import numpy as np
 
 class GPT2Generator:
 
-    def __init__(self,  generate_num=60, temperature=0.10, top_k=25, top_p=0.9):
+    def __init__(self,  generate_num=60, temperature=0.05, top_k=30, top_p=0.9):
         self.generate_num=generate_num
         self.temp = temperature
         self.top_k = top_k
