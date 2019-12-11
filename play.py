@@ -145,9 +145,9 @@ def play_aidungeon_2():
                 result = story_manager.story.load_from_storage(load_ID)
                 console_print("\nLoading Game...\n")
                 console_print(result)
-            elif action == "settemp":
-                 temp = float(input("Set a new temperature >"))
-                 story_manager.generator.output.temperature = temp
+           elif action == "settemp":
+                temp = float(input("Set a new temperature >"))
+                story_manager.generator = GPT2Generator(temperature=temp)
             elif len(action.split(" ")) == 2 and action.split(" ")[0] == "load":
                 load_ID = action.split(" ")[1]
                 result = story_manager.story.load_from_storage(load_ID)
