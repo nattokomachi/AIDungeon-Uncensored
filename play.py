@@ -67,7 +67,6 @@ def instructions():
     text += '\n  "save"     Makes a new save of your game and gives you the save ID'
     text += '\n  "load"     Asks for a save ID and loads the game if the ID is valid'
     text += '\n  "print"    Prints a transcript of your adventure (without extra newline formatting)'
-    text += '\n  "settemp" Changes the AI temperature, default is now 0.15, previously 0.4. Going lower will make AI less random.'
     text += '\n  "help"     Prints these instructions again'
     return text
 
@@ -155,19 +154,7 @@ def play_aidungeon_2():
 
             elif action == "print":
                 print("\nPRINTING\n")
-                if line_break == "n":
-                    print(str(story_manager.story))
-                elif line_break == "y":
-                    console_print(str(story_manager.story))
-                elif line_break.isdigit():
-                    console_print(str(story_manager.story), int(line_break))
-
-            elif action == "settemp":
-                temp = float(input("Set a new temperature>"))
-                if temp.isdigit():
-                    story_manager.generator = GPT2Generator(temperature=temp)
-                else:
-                    print("\nEnter a number, please")
+                print(str(story_manager.story))
 
             elif action == "revert":
 
