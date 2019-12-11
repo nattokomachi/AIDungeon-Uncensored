@@ -153,16 +153,6 @@ def play_aidungeon_2():
                 console_print("\nLoading Game...\n")
                 console_print(result)
  
-            elif action == "print":
-            line_break = input("Format output into fixed width? (y/n): ")
-                print("\nPRINTING\n")
-                if line_break == "n":
-                    print(str(story_manager.story))
-                elif line_break == "y":
-                    console_print(str(story_manager.story))
-                elif line_break.isdigit():
-                    console_print(str(story_manager.story), int(line_break))
- 
             elif action == "settemp":
                 temp = float(input("Set a new temperature>"))
                 if temp.isdigit():
